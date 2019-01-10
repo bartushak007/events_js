@@ -1,0 +1,43 @@
+.fixed-menu {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  left: -100%;
+  top: 50px;
+  transition: 0.5s;  
+
+  &__hamburger{
+    fill: #555555;
+  }
+
+  &__list {
+    overflow: auto;
+    height: 90%;
+  }
+
+  &__list-elem {
+    background: transparent;
+    list-style-type: none;
+    margin: 5px;
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    padding: 3px 0;
+    background: #ffffff;
+    color: #2a5259;
+    transition: 0.7s;
+    border-radius: 2px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.75);
+
+    &:hover {
+      transition: 0.3s;
+      color: #ffffff;
+      background: #555555;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+  }
+}

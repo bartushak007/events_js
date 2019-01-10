@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@import "slider";
+@import "block";
+@import "list";
+@import "fixed-menu";
+@import "popup";
+@import "tabs";
+
+.open-menu {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  border: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.pop-up-btn {
+  position: fixed;
+  top: 17px;
+  right: 15px;
+  padding: 5px 6px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
+  background: #ffffff;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: #dddddd;
+  }
+}

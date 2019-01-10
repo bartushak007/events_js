@@ -1,0 +1,41 @@
+.slider {
+  width: 790px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  box-shadow: 9px 7px 13px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 142px;
+  overflow: hidden;
+
+  &__container {    
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  &__inner-slider {
+  }
+
+  &__img {
+    width: 100%;
+    display: none;
+  }
+
+  &__side-button {
+    cursor: pointer;
+    width: 150px;
+    display: flex;
+    background: rgba(153, 153, 153, 0.5);
+    transition: 0.5s;
+
+    &:hover {
+      background: rgba(104, 103, 103, 0.9);
+    }
+  }
+  &__button {
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 65px;
+    margin: auto;
+  }
+}

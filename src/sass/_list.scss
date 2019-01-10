@@ -1,0 +1,30 @@
+.list {
+  padding: 50px;
+
+  &__list-elem {
+    margin: 10px;
+    background: transparent;
+    display: inline-block;
+
+    &--column {
+      display: block;
+      margin: 5px;
+      background: white;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 9px;
+    color: #2a5259;
+    transition: 0.2s;
+    border-radius: 5px;
+    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+
+    &:hover {
+      color: #00687a;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+  }
+}
