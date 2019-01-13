@@ -1174,13 +1174,14 @@ cite {
   text-decoration: none;
 }
 
-.pager__prev[href],
-.pager__next[href] {
+
+.pager__prev--available,
+.pager__next--available {
   color: #333;
 }
 
-.pager__prev[href]:hover,
-.pager__next[href]:hover {
+.pager__prev--available:hover,
+.pager__next--available:hover {
   color: #1d0b98;
 }
 
