@@ -27,42 +27,17 @@
         pagerPageAll[i].classList.remove('pager__page--current');
       }
     }
-    pagerPage[0].classList.add('pager__page--current');
+    pagerPage[0].classList.add('pager__page--current');    
   });
+  rowsValue.addEventListener('input', makeAvailableNextPrevButtons);
 
   var controls = document.querySelector('.pager__controls');
   controls.addEventListener('click', function() {
     event.preventDefault();
   });
 
-  controls.addEventListener('click', function() {
-    var prev = document.querySelector('.pager__prev');
-    var next = document.querySelector('.pager__next');
-    var evTarget = event.target;
-
-    if (evTarget === prev && page > 0) {
-      showCurrentArrOfRows(arrOfVisibleElements, --page);
-    } else if (evTarget === next) {
-      if (page + 1 < arrOfVisibleElements.length) {
-        showCurrentArrOfRows(arrOfVisibleElements, ++page);
-      }
-    } else if (
-      evTarget.tagName === 'A' && !(evTarget === prev && !(evTarget === next))) {
-      page = +evTarget.innerHTML - 1;
-      showCurrentArrOfRows(arrOfVisibleElements, page);
-    }
-    if (page + 1 === arrOfVisibleElements.length) {
-      next.classList.remove('pager__next--available');
-    } else {
-      next.classList.add('pager__next--available');
-    }
-
-    if (page === 0) {
-      prev.classList.remove('pager__prev--available');
-    } else {
-      prev.classList.add('pager__prev--available');
-    }
-  });
+  controls.addEventListener('click', makeAvailableNextPrevButtons
+  );
 
   doArrOfVisibleElements();
   showCurrentArrOfRows(arrOfVisibleElements, 0);
@@ -99,6 +74,7 @@
   }
 
   function doArrOfVisibleElements() {
+    page = 0;
     var counter = 0;
     var pagerPageAll = document.querySelectorAll('.pager__page--current');
     arrOfVisibleElements = [];
@@ -216,7 +192,6 @@
       thirdCurrentPage = pagerPage[2].innerHTML = 1;
       fourthPage = pagerPage[3].innerHTML = 1;
     }
-
     changeCurrentPageNumber();
   }
 
@@ -237,6 +212,36 @@
       if (+pagerPage[i].innerHTML === page + 1) {
         pagerPage[i].classList.add('pager__page--current');
       }
+    }
+  }
+
+  function makeAvailableNextPrevButtons() {
+    var prev = document.querySelector('.pager__prev');
+    var next = document.querySelector('.pager__next');
+    var evTarget = event.target;
+
+    if (evTarget === prev && page > 0) {
+      showCurrentArrOfRows(arrOfVisibleElements, --page);
+    } else if (evTarget === next) {
+      if (page + 1 < arrOfVisibleElements.length) {
+        showCurrentArrOfRows(arrOfVisibleElements, ++page);
+      }
+    } else if (
+      evTarget.tagName === 'A' && !(evTarget === prev && !(evTarget === next))) {
+      page = +evTarget.innerHTML - 1;
+      showCurrentArrOfRows(arrOfVisibleElements, page);
+    }
+  
+    if (page + 1 === arrOfVisibleElements.length) {
+      next.classList.remove('pager__next--available');
+    } else {
+      next.classList.add('pager__next--available');
+    }
+
+    if (page === 0) {
+      prev.classList.remove('pager__prev--available');
+    } else {
+      prev.classList.add('pager__prev--available');
     }
   }
 })();
