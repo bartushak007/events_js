@@ -72,10 +72,10 @@ cite {
   counter-reset: overall-position;
 }
 
-#medals-table .position::before {
+/*#medals-table .position::before {
   counter-increment: overall-position;
   content: counter(overall-position);
-}
+}*/
 
 /**
  * Flags icons

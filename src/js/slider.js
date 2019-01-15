@@ -1,34 +1,37 @@
-;(function() {
+(function() {
   document.querySelector('.slider').onselectstart = function() {
-    return false
-  };    
+    return false;
+  };
   var arr = document.querySelectorAll('.slider__img');
   var slide = 0;
   arr[slide].style.display = 'block';
   var nextSlide = document.querySelectorAll('.slider__side-button')[0];
   nextSlide.addEventListener('click', previous);
-  nextSlide.onmousedown = function(){
+  nextSlide.onmousedown = function() {
     this.style.backgroundColor = '#93d691';
-  }
-  nextSlide.onmouseup = function(){  
-  var self = this; 
-  var x = function() {self.style.backgroundColor = ''};
-    setTimeout(x, 180);    
-  }
+  };
+  nextSlide.onmouseup = function() {
+    var self = this;
+    var x = function() {
+      self.style.backgroundColor = '';
+    };
+    setTimeout(x, 180);
+  };
   var previousSlide = document.querySelectorAll('.slider__side-button')[1];
-  previousSlide.addEventListener("click", next);
-  previousSlide.onmousedown = function(){
+  previousSlide.addEventListener('click', next);
+  previousSlide.onmousedown = function() {
     this.style.backgroundColor = '#93d691';
-  }
-  previousSlide.onmouseup = function(){  
-  var self = this; 
-  var x = function() {self.style.backgroundColor = ''};
-    setTimeout(x, 180);    
-  }
-  document.querySelectorAll('.slider__side-button')[1].addEventListener("click", showInformation);
-  
+  };
+  previousSlide.onmouseup = function() {
+    var self = this;
+    var x = function() {
+      self.style.backgroundColor = '';
+    };
+    setTimeout(x, 180);
+  };
+  document.querySelectorAll('.slider__side-button')[1].addEventListener('click', showInformation);
 
-  function previous() {   
+  function previous() {
     arr[slide].style.display = 'none';
     if (slide === 0) {
       slide = arr.length - 1;
@@ -36,7 +39,7 @@
       slide--;
     }
 
-    return arr[slide].style.display = 'block';
+    return (arr[slide].style.display = 'block');
   }
 
   function next() {
@@ -47,7 +50,7 @@
       slide++;
     }
 
-    return arr[slide].style.display = 'block';
+    return (arr[slide].style.display = 'block');
   }
 
   function remove() {
@@ -76,18 +79,16 @@
 
   function switchTo(check) {
     do {
-      if(check === 1) {
+      if (check === 1) {
         slide = +prompt('Which one do you want to remove?', 0);
-      } else if(check === 2) {
+      } else if (check === 2) {
         slide = +prompt('Which place do you want to add a slide to?', 0);
       } else {
         slide = +prompt('Enter number of slide', 0);
       }
-      
-    } while (slide && (slide > arr.length - 1 || !(!isNaN(parseFloat(slide)) && isFinite(slide))))
+    } while (slide && (slide > arr.length - 1 || !(!isNaN(parseFloat(slide)) && isFinite(slide))));
     console.log(slide);
 
     return slide;
   }
-  
 })();

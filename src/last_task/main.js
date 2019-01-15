@@ -7,7 +7,13 @@
   var to = document.querySelector('.to-number');
   var of = document.querySelector('.of-number');
   var page = 0;
-  var arrOfVisibleElements = [];
+  var arrOfVisibleElements = [];  
+  var all = document.querySelectorAll('.position');
+
+  all.forEach = [].forEach;
+  all.forEach(function(item, i) {    
+    item.innerHTML = i + 1;
+  });
 
   of.innerHTML = tableElements.length;
 
