@@ -31,13 +31,13 @@
     color: #2a5259;
     transition: 0.7s;
     border-radius: 2px;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.75);
 
     &:hover {
       transition: 0.3s;
       color: #ffffff;
       background: #555555;
-      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
   }
 }

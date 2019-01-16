@@ -6,7 +6,7 @@
 
     function doScroll(anchor) {
       var anchorHref = '' + anchor.href,
-        newAnchor = '';
+        newAnchor;
 
       for (var i = 0; i < anchorHref.length; i++) {
         if (anchorHref[i] === '#') {
@@ -14,7 +14,7 @@
         }
       }
 
-      var newAnchor = document.getElementById(newAnchor);
+      newAnchor = document.getElementById(newAnchor);
       newAnchor = newAnchor.getBoundingClientRect().top;
 
       function scrollInterval() {

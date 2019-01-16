@@ -8,7 +8,7 @@
         blockCollection[i].style.display = 'none';
         list[i].classList.remove('tabs__list-elem--addline');
 
-        if (event.target == list[i]) {
+        if (event.target === list[i]) {
           current = i;
         }
       }

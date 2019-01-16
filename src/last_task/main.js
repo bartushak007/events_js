@@ -69,7 +69,7 @@
       tableElements.forEach(function(item, i) {
         var regExp = new RegExp('^(' + filterValue.value + ')', 'i');
 
-        if (item.innerHTML.search(regExp) == -1) {
+        if (item.innerHTML.search(regExp) === -1) {
           item.parentNode.hidden = true;
         } else {
           item.parentNode.hidden = false;
